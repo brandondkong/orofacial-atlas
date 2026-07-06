@@ -1,11 +1,1 @@
-.venv
-*.pyc
-__pycache__/
 
-
-config.json
-
-data/generated/**
-storage/
-
-.DS_Store
