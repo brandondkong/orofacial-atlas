@@ -1,16 +1,28 @@
 package main
 
-import "github.com/brandondkong/orofacial-atlas/pkg/config"
+import (
+	"fmt"
+
+	"github.com/brandondkong/orofacial-atlas/pkg/config"
+	"github.com/brandondkong/orofacial-atlas/pkg/input"
+)
 
 func main() {
-	print("Initializing Orofacial Atlas\n")
+	println("Initializing Orofacial Atlas")
 
 	if config.DoesConfigExist() {
 		// load configs
-		print("Loading existing configs\n")
+		println("Loading existing configs")
 	} else {
 		// onboard new configs
-		print("First time using Orofacial Atlas? Welcome!\n")
+		println("First time using Orofacial Atlas? Welcome!")
+
+		char, err := input.PromptSingleCharacter("Are you excited? (y/n): ")
+		if err != nil {
+			panic(err)
+		}
+
+		fmt.Printf("%c\n", char)
 	}
 
 	// load data to RAM based on configs
