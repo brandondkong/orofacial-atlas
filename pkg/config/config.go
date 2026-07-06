@@ -38,3 +38,11 @@ func DoesConfigExist() bool {
 func GetConfigs() (*Config, error) {
 	return nil, nil
 }
+
+func PromptNewConfigs() {
+	println("--------------")
+	println("Config wizard:")
+	
+
+	println("--------------")
+}
